@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { ResetCSS } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js'
@@ -36,7 +36,7 @@ const App: React.FC = () => {
   useFetchPublicData()
 
   return (
-    <Router>
+    <Router basename="/">
       <ResetCSS />
       <GlobalStyle />
       <Menu>
@@ -48,8 +48,8 @@ const App: React.FC = () => {
             <Route path="/farms">
               <Farms />
             </Route>
-            <Route path="/nests">
-              <Farms tokenMode/>
+            <Route path="/pools">
+              <Farms tokenMode />
             </Route>
             {/* <Route path="/pools"> */}
             {/*  <Pools /> */}

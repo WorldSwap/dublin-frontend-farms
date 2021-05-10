@@ -16,12 +16,10 @@ const StyledTwitterCard = styled(Card)`
 `
 
 const Row = styled.div`
-  align-items: center;
-  display: flex;
-  font-size: 14px;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 22px;
 `
+
+const Check = () => <span style={{ marginRight: 12 }}>✔</span>
 
 const TwitterCard = () => {
   const TranslateString = useI18n()
@@ -30,19 +28,32 @@ const TwitterCard = () => {
     <StyledTwitterCard>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(10003, 'Announcements')}
+          About Us
         </Heading>
-        <Timeline
-          dataSource={{
-            sourceType: 'profile',
-            screenName: 'GooseFinance'
-          }}
-          options={{
-            height: '300',
-            chrome: "noheader, nofooter",
-            width: "400"
-          }}
-        />
+        <Row>
+          <Check /> Rug-pull safe
+        </Row>
+        <Row>
+          <Check /> High APYs thanks to multi-edition schema
+        </Row>
+        <Row>
+          <Check /> Fair launch (no dev allocation, no stealth launch)
+        </Row>
+        <Row>
+          <Check /> No migrator code
+        </Row>
+        <Row>
+          <Check /> 24hs Timelock
+        </Row>
+        <Row>
+          <Check /> Deposits fees can never be increased
+        </Row>
+        <Row>
+          <Check /> Emission rate cannot be changed
+        </Row>
+        <Row>
+          <Check /> Multipliers cannot be changed
+        </Row>
       </CardBody>
     </StyledTwitterCard>
   )

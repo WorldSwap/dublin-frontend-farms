@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract EggToken",
-        "name": "_egg",
+        "internalType": "contract DubToken",
+        "name": "_dub",
         "type": "address"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_eggPerBlock",
+        "name": "_dubPerBlock",
         "type": "uint256"
       },
       {
@@ -154,10 +154,10 @@
   },
   {
     "inputs": [],
-    "name": "egg",
+    "name": "dub",
     "outputs": [
       {
-        "internalType": "contract EggToken",
+        "internalType": "contract DubToken",
         "name": "",
         "type": "address"
       }
@@ -168,7 +168,7 @@
   },
   {
     "inputs": [],
-    "name": "eggPerBlock",
+    "name": "dubPerBlock",
     "outputs": [
       {
         "internalType": "uint256",
@@ -235,7 +235,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accEggPerShare",
+        "name": "accDubPerShare",
         "type": "uint256"
       },
       {
@@ -434,7 +434,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingEgg",
+    "name": "pendingDub",
     "outputs": [
       {
         "internalType": "uint256",
@@ -545,7 +545,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_eggPerBlock",
+        "name": "_dubPerBlock",
         "type": "uint256"
       }
     ],
