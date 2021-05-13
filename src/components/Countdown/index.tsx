@@ -29,7 +29,7 @@ const daySeconds = 86400
 const timerProps = {
   isPlaying: true,
   size: 120,
-  strokeWidth: 6
+  strokeWidth: 6,
 }
 
 const renderTime = (dimension, time) => (
@@ -44,13 +44,13 @@ const getTimeMinutes = (time: number) => ((time % hourSeconds) / minuteSeconds) 
 const getTimeHours = (time: number) => ((time % daySeconds) / hourSeconds) | 0
 const getTimeDays = (time: number) => (time / daySeconds) | 0
 
-export default function Countdown () {
+export default function Countdown() {
   const stratTime = Date.now()
   const endTime = new Date('05/15/2021 14:00:00 UTC')
 
   const remainingSeconds = (endTime.getTime() - stratTime) / 1000
-  const days = Math.ceil(remainingSeconds / daySeconds);
-  const daysDuration = days * daySeconds;
+  const days = Math.ceil(remainingSeconds / daySeconds)
+  const daysDuration = days * daySeconds
 
   return (
     <>
@@ -61,48 +61,39 @@ export default function Countdown () {
           duration={daysDuration}
           initialRemainingTime={remainingSeconds}
         >
-          { ({ elapsedTime }) => renderTime("days", getTimeDays(daysDuration - elapsedTime)) }
+          {({ elapsedTime }) => renderTime('days', getTimeDays(daysDuration - elapsedTime))}
         </CountdownCircleTimer>
         <CountdownCircleTimer
           {...timerProps}
           colors="#D14081"
           duration={daySeconds}
           initialRemainingTime={remainingSeconds % daySeconds}
-          onComplete={(totalElapsedTime) => [
-            remainingSeconds - totalElapsedTime > hourSeconds,
-            0,
-          ]}
+          onComplete={(totalElapsedTime) => [remainingSeconds - totalElapsedTime > hourSeconds, 0]}
         >
-          { ({ elapsedTime }) => renderTime("hours", getTimeHours(daySeconds - elapsedTime)) }
+          {({ elapsedTime }) => renderTime('hours', getTimeHours(daySeconds - elapsedTime))}
         </CountdownCircleTimer>
         <CountdownCircleTimer
           {...timerProps}
           colors="#EF798A"
           duration={hourSeconds}
           initialRemainingTime={remainingSeconds % hourSeconds}
-          onComplete={(totalElapsedTime) => [
-            remainingSeconds - totalElapsedTime > minuteSeconds,
-            0,
-          ]}
+          onComplete={(totalElapsedTime) => [remainingSeconds - totalElapsedTime > minuteSeconds, 0]}
         >
-          { ({ elapsedTime }) => renderTime("minutes", getTimeMinutes(hourSeconds - elapsedTime)) }
+          {({ elapsedTime }) => renderTime('minutes', getTimeMinutes(hourSeconds - elapsedTime))}
         </CountdownCircleTimer>
         <CountdownCircleTimer
           {...timerProps}
           colors="#218380"
           duration={minuteSeconds}
           initialRemainingTime={remainingSeconds % minuteSeconds}
-          onComplete={(totalElapsedTime) => [
-            remainingSeconds - totalElapsedTime > 0,
-            0,
-          ]}
+          onComplete={(totalElapsedTime) => [remainingSeconds - totalElapsedTime > 0, 0]}
         >
-          { ({ elapsedTime }) => renderTime("seconds", getTimeSeconds(elapsedTime)) }
+          {({ elapsedTime }) => renderTime('seconds', getTimeSeconds(elapsedTime))}
         </CountdownCircleTimer>
       </CountdownWrapper>
       <EstimatedText>
         <p style={{ color: 'white', marginBottom: 16 }}>
-          <strong>{ endTime.toString() }</strong>
+          <strong>{endTime.toString()}</strong>
         </p>
         <BlockNumber>
           <a href="https://bscscan.com/block/countdown/7432000" target="_blank" rel="noopener noreferrer">
