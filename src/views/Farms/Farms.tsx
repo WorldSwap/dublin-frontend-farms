@@ -13,6 +13,7 @@ import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
+import Countdown from 'components/Countdown'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
@@ -96,9 +97,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {tokenMode ? 'Stake tokens to earn DUB ☘️' : 'Stake LP tokens to earn DUB ☘️'}
       </Heading>
-      <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+      <Heading as="h2" color="secondary" style={{ textAlign: 'center' }}>
         Welcome to Dublin: The first edition of World Swap
       </Heading>
+      <div style={{ marginBottom: 64 }}>
+        <Countdown />
+      </div>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />

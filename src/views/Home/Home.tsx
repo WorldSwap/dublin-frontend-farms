@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Heading, Text, BaseLayout } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
+import Countdown from 'components/Countdown'
 import FarmStakingCard from './components/FarmStakingCard'
 import CakeStats from './components/CakeStats'
 import TotalValueLockedCard from './components/TotalValueLockedCard'
@@ -17,7 +18,6 @@ const Hero = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  margin-bottom: 32px;
   padding-top: 116px;
   text-align: center;
 
@@ -65,6 +65,9 @@ const Home: React.FC = () => {
           Dublin Edition ☘️ 🇮🇪 💚
         </Heading>
       </Hero>
+      <div style={{ marginBottom: 64 }}>
+        <Countdown />
+      </div>
       <div>
         <Cards>
           <FarmStakingCard />
